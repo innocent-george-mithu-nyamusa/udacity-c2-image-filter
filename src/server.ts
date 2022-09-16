@@ -44,7 +44,7 @@ import { filterImageFromURL, deleteLocalFiles } from './util/util';
       res.status(200).send("You haven't added the image url")
     }
 
-    const image:string = await filterImageFromURL(`${image_url}`);
+    const image: string = await filterImageFromURL(`${image_url}`);
 
     res.status(201).sendFile(image, () => {
       deleteLocalFiles([image])
